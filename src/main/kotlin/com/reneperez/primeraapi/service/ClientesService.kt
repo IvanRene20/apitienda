@@ -15,4 +15,9 @@ class ClientesService {
 
         return clientesRepositpry.findAll()
     }
+
+    fun save(clientes: Clientes):Clientes {
+
+        return clientesRepositpry.save(clientes)
+    }
 }

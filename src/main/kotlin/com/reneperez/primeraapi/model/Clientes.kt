@@ -10,5 +10,8 @@ class Clientes {
     @Column(updatable = false)
     var id: Long? = null
 
-    var description: String? = null
+    var nombres: String? = null
+    var apellidos: String? = null
+
+
 }

@@ -16,4 +16,8 @@ class ClientesContoller {
     fun list(): List<Clientes> {
         return clientesService.list()
     }
+    @PostMapping
+    fun save (@RequestBody  clientes: Clientes): Clientes{
+        return clientesService.save(clientes)
+    }
 }
