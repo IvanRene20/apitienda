@@ -4,4 +4,5 @@ import com.reneperez.primeraapi.model.Clientes
 import org.springframework.data.jpa.repository.JpaRepository
 
 interface ClientesRepositpry:JpaRepository<Clientes,Long> {
+    fun findById(id: Long?): Clientes?
 }

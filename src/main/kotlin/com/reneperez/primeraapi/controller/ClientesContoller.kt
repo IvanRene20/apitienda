@@ -20,4 +20,16 @@ class ClientesContoller {
     fun save (@RequestBody  clientes: Clientes): Clientes{
         return clientesService.save(clientes)
     }
+    @PutMapping
+    fun update (@RequestBody clientes: Clientes): Clientes{
+        return clientesService.update(clientes)
+    }
+    @PatchMapping
+    fun updateDescription (@RequestBody clientes: Clientes):Clientes{
+        return clientesService.updateDescription(clientes)
+    }
+    @DeleteMapping("/delete/{id}")
+    fun delete (@PathVariable("id") id: Long):Boolean{
+        return clientesService.delete(id)
+    }
 }
