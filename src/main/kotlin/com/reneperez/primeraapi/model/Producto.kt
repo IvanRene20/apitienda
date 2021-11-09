@@ -11,4 +11,5 @@ class Producto {
     var id: Long? = null
 
     var description: String? = null
+    var details: String? = null
 }

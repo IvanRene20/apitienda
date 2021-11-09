@@ -16,5 +16,24 @@ class ProductoController {
     fun list(): List<Producto> {
         return productoService.list()
     }
+
+    @PostMapping
+    fun save (@RequestBody producto: Producto):Producto{
+        return productoService.save(producto)
+    }
+
+    @PutMapping
+    fun update (@RequestBody producto: Producto):Producto{
+        return productoService.update(producto)
+    }
+
+    @PatchMapping
+    fun updateDescription (@RequestBody producto: Producto): Producto{
+        return productoService.updateDescription(producto)
+    }
+
+    @DeleteMapping("/delete/{id}")
+    fun delete (@PathVariable("id") id: Long): Boolean{
+        return productoService.delete(id)
+    }
 }
-//crear tabla cliente d

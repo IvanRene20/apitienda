@@ -17,4 +17,25 @@ class ProductoService {
 
         return productoRepository.findAll()
     }
+
+    fun save(producto: Producto):Producto{
+        return productoRepository.save(producto)
+    }
+
+    fun update (producto: Producto):Producto{
+        return productoRepository.save(producto)
+    }
+    fun updateDescription (producto: Producto):Producto{
+        val response = productoRepository.findById(producto.id)
+            ?: throw Exception()
+        response.apply {
+            this.description=producto.description
+        }
+        return productoRepository.save(producto)
+    }
+
+    fun delete (id:Long): Boolean{
+        productoRepository.deleteById(id)
+        return true
+    }
 }
